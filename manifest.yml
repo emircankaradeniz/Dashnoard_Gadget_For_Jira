@@ -1,0 +1,26 @@
+modules:
+  jira:dashboardGadget:
+    - key: dashboard-gadget-for-turkcell-dashboard-gadget-ui-kit-2-hello-world-gadget
+      title: Dashboard-Gadget-For-Turkcell
+      description: A hello world dashboard gadget.
+      thumbnail: https://developer.atlassian.com/platform/forge/images/icons/issue-panel-icon.svg
+      resource: main-resource
+      render: native
+      resolver:
+        function: resolver
+      edit:
+        resource: main-resource
+        render: native
+  function:
+    - key: resolver
+      handler: index.handler
+resources:
+  - key: main-resource
+    path: src/frontend/index.jsx
+app:
+  runtime:
+    name: nodejs18.x
+  id: ari:cloud:ecosystem::app/5c663329-5278-4ccc-be7c-60bcd447e4ff
+permissions:
+ scopes:
+   - read:jira-work
